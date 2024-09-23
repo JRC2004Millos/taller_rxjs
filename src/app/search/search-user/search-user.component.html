@@ -1,0 +1,17 @@
+<!-- search-user.component.html -->
+<div class="container mt-4">
+  <form (ngSubmit)="onSearch()" class="d-flex">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+      class="form-control"
+      placeholder="Buscar por username"
+      required
+    />
+    <button type="submit" class="btn btn-primary m-2">Buscar</button>
+  </form>
+
+  <!-- Pasar el usuario encontrado a UserTableComponent -->
+  <app-user-table [user]="user"></app-user-table>
+</div>
