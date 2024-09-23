@@ -1,0 +1,8 @@
+<!-- comment-detail.component.html -->
+<div *ngIf="comment" class="list-group-item mt-3">
+  <p>
+    <strong>{{ comment.user.fullName }}</strong> ({{ comment.user.username }})
+  </p>
+  <p>{{ comment.body }}</p>
+  <p class="text-muted">Likes: {{ comment.likes }}</p>
+</div>

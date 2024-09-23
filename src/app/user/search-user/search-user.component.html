@@ -14,4 +14,7 @@
 
   <!-- Pasar el usuario encontrado a UserTableComponent -->
   <app-user-table [user]="user"></app-user-table>
+
+  <!-- Mostrar los posts del usuario encontrado -->
+  <app-user-posts *ngIf="user" [userId]="user?.id"></app-user-posts>
 </div>

@@ -1,22 +1,38 @@
 <!-- user-table.component.html -->
-<div *ngIf="user">
+<div *ngIf="user" class="mt-3">
   <h3>Detalles del Usuario</h3>
-  <table class="table table-striped mt-3">
-    <thead>
+  <table
+    class="table table-striped mt-3 table-bordered table-hover text-center align-middle"
+  >
+    <thead class="table-dark">
       <tr>
+        <th>Imagen</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
         <th>Teléfono</th>
+        <th>Edad</th>
+        <th>Genero</th>
+        <th>Fecha de Nacimiento</th>
         <th>Username</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>
+          <img
+            [src]="user.image"
+            [alt]="user.firstName + ' ' + user.lastName"
+            class="img-thumbnail"
+          />
+        </td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.birthDate }}</td>
         <td>{{ user.username }}</td>
       </tr>
     </tbody>

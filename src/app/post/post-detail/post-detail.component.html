@@ -1,0 +1,24 @@
+<!-- post-detail.component.html -->
+<div *ngIf="post" class="list-group-item mt-3">
+  <h5>{{ post.title }}</h5>
+  <p>{{ post.body }}</p>
+  <p class="text-muted">
+    <i class="bi bi-hand-thumbs-up"></i> {{ post.reactions.likes }}
+    <i class="bi bi-hand-thumbs-down ml-3"></i> {{ post.reactions.dislikes }}
+  </p>
+  <p class="text-muted">Etiquetas: {{ post.tags.join(", ") }}</p>
+
+  <!-- Mostrar los comentarios -->
+  <h6>Comentarios:</h6>
+  <ul class="list-group">
+    <!-- Si hay comentarios, mostrar cada uno -->
+    <li *ngFor="let comment of comments">
+      <app-comment-detail [comment]="comment"></app-comment-detail>
+    </li>
+
+    <!-- Si no hay comentarios, mostrar el mensaje -->
+    <ng-container *ngIf="comments.length === 0">
+      <p class="text-muted">No hay comentarios para este post.</p>
+    </ng-container>
+  </ul>
+</div>

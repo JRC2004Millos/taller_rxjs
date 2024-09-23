@@ -1,0 +1,13 @@
+<!-- user-posts.component.html -->
+<div *ngIf="posts.length > 0; else noPosts">
+  <h3>Posts del Usuario</h3>
+  <ul class="list-group">
+    <li *ngFor="let post of posts">
+      <app-post-detail [post]="post"></app-post-detail>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noPosts>
+  <p class="alert alert-info">No se encontraron posts para este usuario.</p>
+</ng-template>
